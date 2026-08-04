@@ -7,6 +7,7 @@ import json, base64, os, sys
 
 LOGO_PATH = r"D:\lighknight\logo.png"
 WM_PATH   = r"D:\lighknight\myWaterMark.jpg"
+HERO_PATH = r"C:\Users\sdd\.gemini-account-35\.gemini\antigravity-cli\brain\44e6be79-2dea-4317-8498-ddcc2908895b\lightknight_hero_1785885040055.jpg"
 PORTAL_DIR = r"D:\humming-the-W-Y"
 
 def b64(path):
@@ -17,6 +18,7 @@ def b64(path):
 def generate():
     logo_uri = b64(LOGO_PATH)
     wm_uri   = b64(WM_PATH)
+    hero_uri = b64(HERO_PATH)
     lessons  = json.loads(open(os.path.join(PORTAL_DIR, "lessons.json"), "r", encoding="utf-8").read())
 
     lesson_cards = ""
@@ -166,6 +168,48 @@ body {{
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     margin: 20px auto;
+}}
+
+/* ── Hero Banner ───────────────────────── */
+.hero-banner {{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(197,164,78,0.1);
+}}
+.hero-img {{
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    filter: brightness(0.85) saturate(1.15);
+}}
+.hero-overlay {{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(15,26,48,0.6) 70%, rgba(15,26,48,0.95) 100%);
+    pointer-events: none;
+}}
+.hero-motto {{
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 26px);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-shadow: 0 2px 20px rgba(197,164,78,0.5), 0 0 60px rgba(197,164,78,0.2);
+    font-style: italic;
+}}
+@media (max-width: 600px) {{
+    .hero-banner {{ border-radius: 16px; margin: 0 8px 28px; }}
+    .hero-motto {{ font-size: 14px; bottom: 14px; }}
 }}
 
 /* ── User Info Bar ───────────────────────── */
@@ -445,6 +489,13 @@ body {{
     <p class="portal-subtitle">Master Tajweed rules through guided recitation exercises</p>
     <div class="portal-divider"></div>
 </header>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+    <img src="{hero_uri}" class="hero-img" alt="LightKnight — Keep the Flow">
+    <div class="hero-overlay"></div>
+    <div class="hero-motto">"You better keep the flow, pal."</div>
+</div>
 
 <!-- User Bar -->
 <div class="user-bar" id="userBar" style="display:none;">
