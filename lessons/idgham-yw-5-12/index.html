@@ -216,6 +216,25 @@
     font-style: normal;
     text-align: right;
 }
+/* ── Responsive Instructions ─────────────────────────── */
+@media (max-width: 720px) {
+    .lk-instructions-card { padding: 20px 16px; margin: 0 8px 16px; }
+    .lk-instructions-title { font-size: 18px; }
+    .lk-instructions-title span.ar { font-size: 22px; }
+}
+/* ── Dark-mode adaptive instructions ─────────────────── */
+[data-theme="dark"] .lk-instructions-card {
+    background: rgba(15, 26, 48, 0.85);
+    border-color: rgba(197, 164, 78, 0.25);
+    color: #e8e6e3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+[data-theme="dark"] .lk-instructions-title { color: #e8e6e3; }
+[data-theme="dark"] .lk-hadith-box {
+    background: rgba(42, 58, 94, 0.3);
+    color: #c8c4bb;
+}
+[data-theme="dark"] .lk-hadith-box span.ar { color: #e8e6e3; }
 </style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -6721,15 +6740,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = document.getElementById('themeIcon');
     const html = document.documentElement;
     const saved = localStorage.getItem('qrasm_theme');
-    // Deep links always open in light mode; otherwise respect saved preference
-    const hasScrollTo = new URLSearchParams(window.location.search).has('scrollTo');
-    if (hasScrollTo) {
-        html.removeAttribute('data-theme');
-        icon.textContent = '☀️';
-    } else if (saved === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        icon.textContent = '🌙';
-    }
+    // ALWAYS start in light mode — light is the default for all lessons
+    html.removeAttribute('data-theme');
+    icon.textContent = '☀️';
     toggle.addEventListener('click', () => {
         const isDark = html.getAttribute('data-theme') === 'dark';
         if (isDark) {
