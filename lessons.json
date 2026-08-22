@@ -1,14 +1,57 @@
 [
   {
     "id": "idgham-yw-5-12",
-    "title": "Idgham of Noon & Tanween in Yaa or Waw",
+    "title": "the humming y&w",
     "titleAr": "إدغام النون والتنوين في الياء أو الواو",
     "rule": "Idgham of Noon and Tanween in Yaa or Waw",
     "syllables": "5-12",
     "instances": 143,
     "path": "lessons/idgham-yw-5-12/",
     "assignmentId": "idgham_yw_lesson",
-    "dateAdded": "2026-08-04",
     "color": "#c5a44e"
+  },
+  {
+    "id": "ghunnah-5-12",
+    "title": "Ghunnah of Noon and Meem",
+    "titleAr": "نّ+مّ",
+    "rule": "Ghunnah of Noon and Meem",
+    "syllables": "5-12",
+    "instances": 696,
+    "path": "lessons/ghunnah-5-12/",
+    "assignmentId": "ghunnah_5_12_lesson",
+    "color": "#e07a5f"
+  },
+  {
+    "id": "iqlab-ikhfa-shafawi-5-20",
+    "title": "the floating humming meem",
+    "titleAr": "الإقلاب والإخفاء الشفوي",
+    "rule": "Iqlab and Ikhfa Shafawi",
+    "syllables": "5-20",
+    "instances": 218,
+    "path": "lessons/iqlab-ikhfa-shafawi-5-20/",
+    "assignmentId": "iqlab_ikhfa_shafawi_5_20_lesson",
+    "color": "#81b29a"
+  },
+  {
+    "id": "extended-humming-5-12",
+    "title": "extended nasal noon",
+    "titleAr": "الإخفاء الحقيقي",
+    "rule": "Extended Humming",
+    "syllables": "5-12",
+    "instances": 364,
+    "path": "lessons/extended-humming-5-12/",
+    "assignmentId": "extended_humming_5_12_lesson",
+    "color": "#3d5a80"
+  },
+  {
+    "id": "ghunnah-noon-meem-5-12",
+    "title": "Ghunnah of Noon and Meem",
+    "titleAr": "النون والميم المشددتان",
+    "rule": "Ghunnah of Noon and Meem",
+    "syllables": "5-12",
+    "instances": 696,
+    "path": "lessons/ghunnah-noon-meem-5-12/",
+    "assignmentId": "ghunnah_noon_meem_lesson",
+    "color": "#e07a5f"
   }
 ]
